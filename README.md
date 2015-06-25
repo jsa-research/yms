@@ -1,6 +1,3 @@
-PROJECT MOVED TO: https://github.com/yandex/yms
-------------
-
 yms
 ======
 
