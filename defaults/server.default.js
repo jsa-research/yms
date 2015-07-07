@@ -1,16 +1,27 @@
-var yms = require('yms'),
+var fs = require('fs'),
+    path = require('path'),
+    yms = require('yms'),
     plg = yms.plugins,
     // You can require your own packages.
     express = yms.express,
     minimist = yms.minimist;
 
+var UNIX_SOCKET = '/tmp/node-{username}-{directory}.sock'
+        .replace('{username}', process.env.USER)
+        .replace('{directory}', path.basename(process.cwd()));
+
 var app = express(),
     args = minimist(process.argv),
-    port = args.port || args.p || 3000;
+    source = args.port || args.p || UNIX_SOCKET;
 
 app.get(['/', '/:action(init|index|combine|map)(.js|.xml)?'], handleYms);
-app.listen(port);// TODO Add sockets support.
-console.log('Server `yms` started on port ' + port + '.');
+app.listen(source, function () {
+    if (isNaN(parseInt(source))) {
+        fs.chmod(source, '0777');
+    }
+});
+
+console.log('Server `yms` is listening ' + source + '.');
 
 function handleYms (req, res) {
     var data = {
