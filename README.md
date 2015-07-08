@@ -22,3 +22,6 @@ yms [server] [DIR=.] [-p <port>]    # Starts `yms` server.
 yms configure [DIR=.] [-f]          # Makes a copy of default `server.js` in specified directory.
 yms help                            # Displays this message.
 ````
+
+####Plugins usage:####
+Check out [**ymb plugins documentation**](docs/plugins.md).

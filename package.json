@@ -40,6 +40,12 @@
   "bin": {
     "yms": "./bin/yms.js"
   },
+  "scripts": {
+    "docs": "jsdoc2md \"lib/server/plugins/**/*.js\" > docs/plugins.md"
+  },
   "preferGlobal": true,
-  "license": "Mozilla Public License, v. 2.0"
+  "license": "Mozilla Public License, v. 2.0",
+  "devDependencies": {
+    "jsdoc-to-markdown": "^1.1.1"
+  }
 }
