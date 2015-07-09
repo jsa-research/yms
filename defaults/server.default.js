@@ -6,22 +6,24 @@ var fs = require('fs'),
     express = yms.express,
     minimist = yms.minimist;
 
-var UNIX_SOCKET = '/tmp/node-{username}-{directory}.sock'
-        .replace('{username}', process.env.USER)
-        .replace('{directory}', path.basename(process.cwd()));
+setupServer();
 
-var app = express(),
-    args = minimist(process.argv),
-    source = args.port || args.p || UNIX_SOCKET;
+function setupServer () {
+    var app = express(),
+        args = minimist(process.argv),
+        source = args.port || args.p || args.socket || 8000,
+        sourceType = isNaN(parseInt(source)) ? 'socket' : 'port';
 
-app.get(['/', '/:action(init|index|combine|map)(.js|.xml)?'], handleYms);
-app.listen(source, function () {
-    if (isNaN(parseInt(source))) {
-        fs.chmod(source, '0777');
-    }
-});
+    app.get(['/', '/:action(init|index|combine|map)(.js|.xml)?'], handleYms);
 
-console.log('Server `yms` is listening ' + source + '.');
+    app.listen(source, function () {
+        if (sourceType == 'socket') {
+            fs.chmod(source, '0777');
+        }
+
+        console.log('Server `yms` is listening `' + source + '`.');
+    });
+}
 
 function handleYms (req, res) {
     var data = {
