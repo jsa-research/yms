@@ -30,7 +30,8 @@ function handleYms (req, res) {
             req: req,
             res: res,
             src: './build/' + (req.query.mode ? req.query.mode + '/' : ''),
-            env: {}
+            env: {},
+            cacheEnabled: req.query.mode != 'debug'
         };
 
     res.set('Content-Type', 'text/javascript');
