@@ -26,12 +26,14 @@ function setupServer () {
 }
 
 function handleYms (req, res) {
-    var data = {
+    var buildPath = path.resolve(__dirname, './build/'),
+        mode = req.query.mode,
+        data = {
             req: req,
             res: res,
-            src: './build/' + (req.query.mode ? req.query.mode + '/' : ''),
+            src: buildPath + (mode ? mode + '/' : ''),
             env: {},
-            cacheEnabled: req.query.mode != 'debug'
+            cacheEnabled: mode != 'debug'
         };
 
     res.set('Content-Type', 'text/javascript');
