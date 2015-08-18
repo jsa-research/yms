@@ -6,6 +6,8 @@ var fs = require('fs'),
     express = yms.express,
     minimist = yms.minimist;
 
+var args = minimist(process.argv);
+
 setupServer();
 
 function setupServer () {
@@ -33,7 +35,7 @@ function handleYms (req, res) {
             res: res,
             src: buildPath + (mode ? mode + '/' : ''),
             env: {},
-            cacheEnabled: mode != 'debug'
+            cacheEnabled: !args.nocache
         };
 
     res.set('Content-Type', 'text/javascript');
