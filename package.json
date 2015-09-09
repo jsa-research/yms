@@ -1,6 +1,6 @@
 {
   "name": "yms",
-  "version": "0.1.20",
+  "version": "0.1.24",
   "description": "Server for projects based on ym modules.",
   "author": "Alexander Zinchuk <alexander@zinchuk.com>",
   "repository": {
