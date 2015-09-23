@@ -35,7 +35,8 @@ function handleYms (req, res) {
             res: res,
             src: buildPath + (mode ? mode + '/' : ''),
             env: {},
-            cacheEnabled: !args.nocache
+            development: args.development,
+            cacheEnabled: !args.development
         };
 
     res.set('Content-Type', 'text/javascript');
