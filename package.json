@@ -41,7 +41,6 @@
     "yms": "./bin/yms.js"
   },
   "scripts": {
-    "start": "yms",
     "configure": "yms --configure",
     "docs": "jsdoc2md \"lib/server/plugins/**/*.js\" > docs/plugins.md"
   },
