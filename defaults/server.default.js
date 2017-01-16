@@ -18,6 +18,8 @@ function setupServer () {
 
     app.get(['/', '/:action(init|index|combine|map)(.js|.xml)?'], handleYms);
 
+    app.use(handleErrors);
+
     app.listen(source, function () {
         if (sourceType == 'socket') {
             fs.chmod(source, '0777');
@@ -69,4 +71,10 @@ function handleMap (data) {
         .pipe(plg.jsonp(data))
         .pipe(plg.contents(data))
         .pipe(data.res);
+}
+
+function handleErrors (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500);
+    res.json({ error: err.message || (typeof err == 'string' ? err : 'Unknown error') });
 }
