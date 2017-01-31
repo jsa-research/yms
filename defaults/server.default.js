@@ -16,7 +16,7 @@ function setupServer () {
         source = args.port || args.p || args.socket || 8000,
         sourceType = isNaN(parseInt(source)) ? 'socket' : 'port';
 
-    app.get(['/', '/:action(init|index|combine|map)(.js|.xml)?'], handleYms);
+    app.get(['/', '/:action(init|index|combine|map)(.js|.xml|.json)?'], handleYms);
 
     app.use(handleErrors);
 
