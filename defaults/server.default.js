@@ -25,7 +25,7 @@ function setupServer () {
             fs.chmod(source, '0777');
         }
 
-        console.log('Server `yms` is listening `' + source + '`.');
+        console.log('Server ' + clc.cyan.bold('yms') + ' started on ' + clc.magenta(source));
     });
 }
 
