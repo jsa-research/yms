@@ -1,7 +1,7 @@
 yms
 ======
 
-Server for projects built with [ymb](https://www.npmjs.org/package/ymb). Runs on top of [express](http://expressjs.com/).
+Server for projects built with [ymb](https://www.npmjs.org/package/ymb). Runs on top of [koa](http://koajs.com/).
 
 Requirements
 ------------
@@ -27,7 +27,3 @@ CLI usage
 yms configure [DIR=.] [-f]          # Makes a copy of default `server.js` in specified directory.
 yms help                            # Displays this message.
 ````
-
-Plugins usage
----------------
-Check out [**ymb plugins documentation**](docs/plugins.md).

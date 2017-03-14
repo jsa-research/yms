@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "cli-color": "^1.2.0",
+    "jsdoc-to-markdown": "^2.0.1",
     "kcors": "^2.2.1",
     "koa": "^2.1.0",
     "koa-compose": "^3.2.1",
@@ -37,12 +38,6 @@
   "bin": {
     "yms": "./bin/yms.js"
   },
-  "scripts": {
-    "docs": "jsdoc2md \"lib/server/plugins/**/*.js\" > docs/plugins.md"
-  },
-  "preferGlobal": true,
-  "license": "MPL-2.0",
-  "devDependencies": {
-    "jsdoc-to-markdown": "^1.1.1"
-  }
+  "preferGlobal": false,
+  "license": "MPL-2.0"
 }
