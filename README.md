@@ -19,11 +19,3 @@ npm install --save-dev yms
 # Start yms server
 node server.js
 ```
-
-
-CLI usage
----------------
-````bash
-yms configure [DIR=.] [-f]          # Makes a copy of default `server.js` in specified directory.
-yms help                            # Displays this message.
-````
