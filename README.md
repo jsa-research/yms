@@ -11,7 +11,7 @@ Fast start
 ---------------
 ```bash
 # Install yms into your project
-npm install --save-dev yms
+npm install --save yms
 
 # Generate `server.js` file (and tune it if needed)
 ./node_modules/.bin/yms configure .
