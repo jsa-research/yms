@@ -1,10 +1,10 @@
 const path = require('path');
-const minimist = require('yms/node_modules/minimist');
-const Koa = require('yms/node_modules/koa');
-const Router = require('yms/node_modules/koa-router');
-const compose = require('yms/node_modules/koa-compose');
-const cors = require('yms/node_modules/kcors');
-const clc = require('yms/node_modules/cli-color');
+const minimist = require('minimist');
+const Koa = require('koa');
+const Router = require('koa-router');
+const compose = require('koa-compose');
+const cors = require('kcors');
+const clc = require('cli-color');
 const m = require('yms').middleware;
 const PublicError = require('yms').PublicError;
 
