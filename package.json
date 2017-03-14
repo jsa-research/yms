@@ -23,20 +23,16 @@
     "node": "^4.2.0"
   },
   "dependencies": {
-    "event-stream": "^3.3.2",
-    "express": "^4.13.4",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-fast-wrapper": "0.0.1",
-    "gulp-file": "^0.2.0",
-    "gulp-footer": "^1.0.5",
-    "gulp-util": "^3.0.7",
-    "lodash": "^4.6.1",
+    "cli-color": "^1.2.0",
+    "kcors": "^2.2.1",
+    "koa": "^2.1.0",
+    "koa-compose": "^3.2.1",
+    "koa-router": "^7.1.0",
+    "lodash": "^4.17.4",
     "md5-jkmyers": "0.0.1",
     "minimist": "^1.2.0",
-    "through2": "^2.0.1",
-    "vow": "^0.4.12",
-    "vow-fs": "^0.3.4"
+    "vow": "^0.4.15",
+    "vow-fs": "^0.3.6"
   },
   "bin": {
     "yms": "./bin/yms.js"
